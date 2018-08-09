@@ -24,7 +24,7 @@ function display_data() {
     return false;
   }
   for (i = 1; i<=$("#pages").val(); i++) {
-    var pageId = "topic" + pad(i, 4);
+    var pageId = "topic" + pad(i, 1);
     linksHtml = linksHtml + "<a href='" + "https://saplearninghub.plateau.com/icontent_e/CUSTOM_eu/sap/self-managed/ebook/" + $("#course").val() + "/xml/" + pageId + ".svg" + "'>" + i + "</a>; ";
     scriptHtml = scriptHtml + '"' + $("#swftoolspath").val() + 'swfrender.exe" ' + pageId + '.swf -o ' + pageId + '.png\n';
   }
