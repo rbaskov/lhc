@@ -23,11 +23,11 @@ function display_data() {
     alert("Mandatory fields not filled!");
     return false;
   }
-  https://saplearninghub.plateau.com/icontent_e/CUSTOM_eu/sap/self-managed/ebook/S4SD1_RU_Col03_R1.2/xml/topic1.svg
+
   
   for (i = 1; i<=$("#pages").val(); i++) {
-    var pageId = "page" + pad(i, 4);
-    linksHtml = linksHtml + "<a href='" + "https://saplearninghub.plateau.com/icontent_e/CUSTOM_eu/sap/self-managed/ebook/" + $("#course").val() + "/xml/topic" + pageId + ".svg" + "'>" + i + "</a>; ";
+    var pageId = "topic"" + pad(i, 2);
+    linksHtml = linksHtml + "<a href='" + "https://saplearninghub.plateau.com/icontent_e/CUSTOM_eu/sap/self-managed/ebook/" + $("#course").val() + "/xml/ + pageId + ".svg" + "'>" + i + "</a>; ";
     scriptHtml = scriptHtml + '"' + $("#swftoolspath").val() + 'swfrender.exe" ' + pageId + '.swf -o ' + pageId + '.png\n';
   }
   $("#links").html("<small>" + linksHtml + "</small>");
