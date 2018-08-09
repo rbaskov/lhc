@@ -23,11 +23,9 @@ function display_data() {
     alert("Mandatory fields not filled!");
     return false;
   }
-
-  
   for (i = 1; i<=$("#pages").val(); i++) {
-    var pageId = "topic"" + pad(i, 2);
-    linksHtml = linksHtml + "<a href='" + "https://saplearninghub.plateau.com/icontent_e/CUSTOM_eu/sap/self-managed/ebook/" + $("#course").val() + "/xml/ + pageId + ".svg" + "'>" + i + "</a>; ";
+    var pageId = "topic" + pad(i, 4);
+    linksHtml = linksHtml + "<a href='" + "https://saplearninghub.plateau.com/icontent_e/CUSTOM_eu/sap/self-managed/ebook/" + $("#course").val() + "/xml/" + pageId + ".svg" + "'>" + i + "</a>; ";
     scriptHtml = scriptHtml + '"' + $("#swftoolspath").val() + 'swfrender.exe" ' + pageId + '.swf -o ' + pageId + '.png\n';
   }
   $("#links").html("<small>" + linksHtml + "</small>");
@@ -47,7 +45,7 @@ function display_data() {
 </div>
 <hr/>
 <div id="panel">
-<label style="font-size : 0.7em; font-family : Arial">Course ID: </label><input id="course" type="text" name="course" value="SAPX04_EN_Col95" style="font-size : 0.7em"/>
+<label style="font-size : 0.7em; font-family : Arial">Course ID: </label><input id="course" type="text" name="course" value="S4SD1_RU_Col03_R1.2" style="font-size : 0.7em"/>
 <label style="font-size : 0.7em; font-family : Arial; margin-left : 20px"># of pages: </label><input id="pages" type="text" name="pages" value="246" style="font-size : 0.7em"/>
 <label style="font-size : 0.7em; font-family : Arial; margin-left : 20px">Path to SWFTools: </label><input id="swftoolspath" type="text" name="swftoolspath" value="c:\Program Files (x86)\SWFTools\" size="35" style="font-size : 0.7em"/>
 <button onclick="display_data()" style="margin-left : 20px; font-size : 0.7em">Go</button>
