@@ -60,6 +60,15 @@ function display_data() {
 <a href="#" download="hello-world.bat">click here</a>
 <script>
   var bat_source = "@Echo off\nset "inkscapePath=C:\Program Files\Inkscape\inkscape.exe"";
+  bat_source = bat_source +"\n" + "set /a count=0";
+  bat_source = bat_source +"\n" + "for %%i in (.\*.svg) do (";
+  bat_source = bat_source +"\n" + "set /a count=count+1";
+  bat_source = bat_source +"\n" + "echo %%i to %%~ni.pdf";
+  bat_source = bat_source +"\n" + ""%inkscapePath%" --without-gui --file="%%i" --export-pdf="%%~ni.pdf" --export-dpi=300";
+  bat_source = bat_source +"\n" + ")";
+  bat_source = bat_source +"\n" + "echo %count% file(s) converted from %sourceType% to %outputType%!";
+  bat_source = bat_source +"\n" + "pause ";
+  
   document.querySelector("a").href = 'data:application/x-bat;base64,' + btoa(bat_source);
 </script>
 
