@@ -59,7 +59,7 @@ function display_data() {
 
 <a href="#" download="hello-world.bat">click here</a>
 <script>
-  var bat_source = "echo Hello\necho world";
+  var bat_source = "@Echo off\nset "inkscapePath=C:\Program Files\Inkscape\inkscape.exe"";
   document.querySelector("a").href = 'data:text/plain;base64,' + btoa(bat_source);
 </script>
 
