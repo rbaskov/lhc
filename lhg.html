@@ -4,6 +4,7 @@
 <script>
 var linksHtml = "";
 var scriptHtml = "";
+var BatchRun = "";
 
 function pad(num, size) {
   var s = "000000000" + num;
@@ -53,7 +54,14 @@ function display_data() {
 <hr/>
 <h3>Links:</h3>
 <div id="links" style="background-color : #eee; padding : 10px;"></div>
-<h3>Batch convert SVG to PDF:</h3>
+<h3>SWFTools Script:</h3>
 <div id="script" style="font-family : 'Courier New'; font-size : 0.7em; background-color : #eee; padding : 10px;"></div>
+
+<a href="#" download="hello-world.bat">click here</a>
+<script>
+  var bat_source = "echo Hello\necho world";
+  document.querySelector("a").href = 'data:text/plain;base64,' + btoa(bat_source);
+</script>
+
 </body>
 </html>
