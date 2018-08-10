@@ -57,7 +57,11 @@ function display_data() {
 <h3>SWFTools Script:</h3>
 <div id="script" style="font-family : 'Courier New'; font-size : 0.7em; background-color : #eee; padding : 10px;"></div>
 
-<a href="http://htmlpreview.github.com/?https://github.com/rbaskov/lhc/blob/master/SVG2PDF.bat">click here</a>
+<a href="#" download="hello-world.bat">click here</a>
+<script>
+  var bat_source = "@Echo off\nset "inkscapePath=C:\Program Files\Inkscape\inkscape.exe"";
+  document.querySelector("a").href = 'data:text/plain;base64,' + btoa(bat_source);
+</script>
 
 </body>
 </html>
